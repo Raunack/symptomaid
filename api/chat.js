@@ -33,7 +33,7 @@ export default async function handler(req, res) {
     const textPrompt = `User symptoms (${isTamil ? 'Please reply in Tamil' : 'Please reply in English'}): ${symptoms}`;
 
     try {
-        const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`, {
+        const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
