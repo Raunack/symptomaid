@@ -475,22 +475,6 @@
 
         let isTamil = false;
 
-        // Gemini API Configuration
-        const SYSTEM_PROMPT = `You are a medical assistant AI. When a user describes symptoms, you MUST respond in this exact format:
-
-🔍 Possible Conditions:
-- List 2-3 likely conditions based on the symptoms
-
-🏠 Home Remedies:
-- List specific remedies for each condition
-
-⚠️ See a Doctor If:
-- List specific warning signs
-
-📋 Disclaimer: This is not a substitute for professional medical advice.
-
-Be specific and detailed. For example, if someone says headache + nausea + cold, mention possibilities like viral fever, common cold, flu, or migraine. Never give vague generic responses.`;
-
         // Dictionaries
         const dict = {
             en: {
@@ -632,42 +616,33 @@ Be specific and detailed. For example, if someone says headache + nausea + cold,
             resultsSection.classList.add('fade-in');
 
             let result;
-            const apiKey = "[PASTE YOUR KEY HERE]";
-
+            
             try {
-                if (apiKey === "AIzaSyBqQ2MSLUm_k7PjBFv_qZWJO6rAQoqnjOs" || apiKey.trim() === "") {
-                    throw new Error('API key missing. Please insert a real API key directly into the script.');
-                }
-
-                const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`, {
+                const response = await fetch('/api/chat', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        system_instruction: {
-                            parts: [{ text: SYSTEM_PROMPT }]
-                        },
-                        contents: [{
-                            parts: [{ text: `User symptoms (${isTamil ? 'Please reply in Tamil' : 'Please reply in English'}): ${text}` }]
-                        }]
+                    body: JSON.stringify({ 
+                        symptoms: text,
+                        isTamil: isTamil
                     })
                 });
-
+                
                 if (response.ok) {
                     const data = await response.json();
-                    const aiAdvice = data.candidates[0].content.parts[0].text;
+                    const aiAdvice = data.advice;
                     const mockResult = getMockResult(text); // Fallback for badges
                     result = { type: mockResult.type, level: mockResult.level, advice: aiAdvice };
                 } else {
                     const data = await response.json();
-                    throw new Error(data.error?.message || 'API Error: Verify your API key.');
+                    throw new Error(data.error || 'Backend Server Error.');
                 }
-            } catch (e) {
-                console.error("Gemini API Error", e);
+            } catch(e) {
+                console.error("API Proxy Error", e);
                 // On error, show error message
-                result = {
-                    type: 'clinic',
-                    level: 'Error Check Failed',
-                    advice: `❌ ${e.message}\n\nPlease check your web console for more details or verify your API key.`
+                result = { 
+                    type: 'clinic', 
+                    level: 'Proxy Check Failed', 
+                    advice: `❌ ${e.message}\n\nPlease check that your server is running and your GEMINI_API_KEY environment variable is set.` 
                 };
             }
 
