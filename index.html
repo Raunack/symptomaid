@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,22 +11,29 @@
     <style>
         :root {
             /* Teal Medical Theme */
-            --bg-color: #F0FDFA; /* Soft mint/teal */
+            --bg-color: #F0FDFA;
+            /* Soft mint/teal */
             --card-bg: #FFFFFF;
             --text-main: #0F172A;
             --text-muted: #475569;
-            --primary-color: #0D9488; /* Teal 600 */
-            --primary-hover: #0F766E; /* Teal 700 */
-            --border-color: #CCFBF1; /* Teal 100 */
+            --primary-color: #0D9488;
+            /* Teal 600 */
+            --primary-hover: #0F766E;
+            /* Teal 700 */
+            --border-color: #CCFBF1;
+            /* Teal 100 */
             --focus-ring: rgba(13, 148, 136, 0.25);
-            
+
             /* Urgency Colors */
             --urgency-emergency-bg: #FEF2F2;
-            --urgency-emergency-text: #DC2626; /* Red */
+            --urgency-emergency-text: #DC2626;
+            /* Red */
             --urgency-clinic-bg: #FEF9C3;
-            --urgency-clinic-text: #CA8A04; /* Yellow/Orange */
+            --urgency-clinic-text: #CA8A04;
+            /* Yellow/Orange */
             --urgency-home-bg: #F0FDF4;
-            --urgency-home-text: #16A34A; /* Green */
+            --urgency-home-text: #16A34A;
+            /* Green */
 
             /* Geometry */
             --radius-md: 12px;
@@ -34,7 +42,7 @@
             --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
             --shadow-md: 0 4px 6px -1px rgba(20, 184, 166, 0.1), 0 2px 4px -1px rgba(20, 184, 166, 0.06);
             --shadow-lg: 0 10px 15px -3px rgba(20, 184, 166, 0.15), 0 4px 6px -2px rgba(20, 184, 166, 0.05);
-            
+
             /* Transitions */
             --transition-fast: 200ms cubic-bezier(0.4, 0, 0.2, 1);
         }
@@ -265,11 +273,14 @@
             color: var(--urgency-emergency-text);
             border: 1px solid #FECACA;
         }
+
         .badge.clinic {
             background-color: var(--urgency-clinic-bg);
             color: var(--urgency-clinic-text);
-            border: 1px solid #FEF08A; /* yellow border */
+            border: 1px solid #FEF08A;
+            /* yellow border */
         }
+
         .badge.home {
             background-color: var(--urgency-home-bg);
             color: var(--urgency-home-text);
@@ -317,9 +328,11 @@
                 opacity: 0;
                 transform: scale(0.8);
             }
+
             50% {
                 transform: scale(1.05);
             }
+
             100% {
                 opacity: 1;
                 transform: scale(1);
@@ -335,6 +348,7 @@
                 opacity: 0;
                 transform: translateY(15px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -347,20 +361,25 @@
                 padding: 12px;
                 gap: 16px;
             }
+
             .main-card {
                 padding: 20px;
             }
         }
     </style>
 </head>
+
 <body>
     <div class="app-container">
         <!-- Header -->
         <header class="app-header">
             <div class="logo">
                 <!-- Health/Heart Icon -->
-                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="logo-icon">
-                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                    stroke-linecap="round" stroke-linejoin="round" class="logo-icon">
+                    <path
+                        d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                    </path>
                     <path d="M12 9v6"></path>
                     <path d="M9 12h6"></path>
                 </svg>
@@ -368,35 +387,32 @@
             </div>
             <button class="lang-toggle" id="lang-toggle">
                 <span class="lang-text">தமிழ்</span>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="2" y1="12" x2="22" y2="12"></line>
+                    <path
+                        d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                    </path>
+                </svg>
             </button>
         </header>
 
-        <!-- API Setup Screen -->
-        <main class="main-card hidden" id="api-setup-main">
-            <h2 class="section-title">Welcome to SymptomAid</h2>
-            <p class="subtitle">Please enter your Gemini API key to get started.</p>
-            <p class="subtitle" style="margin-top: -10px; font-size: 0.85rem;">
-                Get your free key at <a href="https://aistudio.google.com" target="_blank" style="color: var(--primary-color); font-weight: 500;">aistudio.google.com</a>
-            </p>
-            
-            <input type="password" id="api-key-input" class="symptom-textarea" style="min-height: auto; padding: 12px; margin-bottom: 8px;" placeholder="e.g., AIzaSy...">
-            
-            <button id="save-key-btn" class="primary-btn">
-                <span>Save Key</span>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline></svg>
-            </button>
-        </main>
-
         <!-- Main Content (Input) -->
-        <main class="main-card hidden" id="app-main">
+        <main class="main-card" id="app-main">
             <div class="input-section">
                 <label for="symptom-input" id="label-symptoms" class="section-title">Describe your symptoms</label>
-                <p class="subtitle" id="subtitle-symptoms">Please be as detailed as possible so we can help you better.</p>
-                <textarea id="symptom-input" class="symptom-textarea" placeholder="e.g., I have had a high fever and severe headache since yesterday morning..."></textarea>
+                <p class="subtitle" id="subtitle-symptoms">Please be as detailed as possible so we can help you better.
+                </p>
+                <textarea id="symptom-input" class="symptom-textarea"
+                    placeholder="e.g., I have had a high fever and severe headache since yesterday morning..."></textarea>
                 <button id="check-btn" class="primary-btn">
                     <span id="btn-text">Check Symptoms</span>
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M12 5l7 7-7 7"></path></svg>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 12h14"></path>
+                        <path d="M12 5l7 7-7 7"></path>
+                    </svg>
                 </button>
             </div>
 
@@ -404,7 +420,7 @@
             <div id="results-section" class="results-section hidden">
                 <div class="results-divider"></div>
                 <h2 class="section-title" id="results-title">Assessment Results</h2>
-                
+
                 <div class="urgency-container">
                     <span class="urgency-label" id="urgency-label">Urgency Level:</span>
                     <span id="urgency-badge" class="badge"></span>
@@ -412,7 +428,12 @@
 
                 <div class="advice-card">
                     <h3 class="advice-title" id="advice-title">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M12 16v-4"></path>
+                            <path d="M12 8h.01"></path>
+                        </svg>
                         AI Advice
                     </h3>
                     <p id="advice-text" class="advice-text"></p>
@@ -427,9 +448,6 @@
         <!-- Footer -->
         <footer class="app-footer">
             <p id="footer-text">This is not a substitute for professional medical advice.</p>
-            <p style="margin-top: 10px;">
-                <button id="change-key-btn" style="background:none;border:none;color:var(--primary-color);text-decoration:underline;cursor:pointer;font-size:0.85rem;">Change API Key</button>
-            </p>
         </footer>
     </div>
 
@@ -511,7 +529,7 @@ Be specific and detailed. For example, if someone says headache + nausea + cold,
         function getMockResult(text) {
             const lowerText = text.toLowerCase();
             let type = 'clinic'; // default
-            
+
             // Simple mock logic
             if (lowerText.includes('chest pain') || lowerText.includes('breathing') || lowerText.includes('நெஞ்சு வலி') || lowerText.includes('மூச்சுச்சுழற்சி')) {
                 type = 'emergency';
@@ -586,59 +604,18 @@ Be specific and detailed. For example, if someone says headache + nausea + cold,
             elBtnText.textContent = d.btnCheck;
             elResultsTitle.textContent = d.resultsTitle;
             elUrgencyLabel.textContent = d.urgencyLabel;
-            
+
             // advice title needs to preserve the icon
             elAdviceTitle.innerHTML = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg> ${d.adviceTitle}`;
-            
+
             elResetText.textContent = d.btnReset;
             elFooterText.textContent = d.footer;
         }
 
-        // Setup API Key Logic
-        const elApiSetupMain = document.getElementById('api-setup-main');
-        const elAppMain = document.getElementById('app-main');
-        const apiKeyInput = document.getElementById('api-key-input');
-        const saveKeyBtn = document.getElementById('save-key-btn');
-        const changeKeyBtn = document.getElementById('change-key-btn');
-
-        function checkApiKey() {
-            const key = localStorage.getItem('gemini_api_key');
-            if (key && key.trim() !== '') {
-                elApiSetupMain.classList.add('hidden');
-                elAppMain.classList.remove('hidden');
-                changeKeyBtn.style.display = 'inline';
-            } else {
-                elApiSetupMain.classList.remove('hidden');
-                elAppMain.classList.add('hidden');
-                changeKeyBtn.style.display = 'none';
-            }
-        }
-
-        saveKeyBtn.addEventListener('click', () => {
-            const key = apiKeyInput.value.trim();
-            if (key) {
-                localStorage.setItem('gemini_api_key', key);
-                checkApiKey();
-            } else {
-                alert("Please enter a valid API key.");
-            }
-        });
-
-        changeKeyBtn.addEventListener('click', () => {
-            if (confirm("Are you sure you want to remove your API key?")) {
-                localStorage.removeItem('gemini_api_key');
-                apiKeyInput.value = '';
-                checkApiKey();
-            }
-        });
-
-        // Run check on load
-        checkApiKey();
-
         // Check Symptoms functionality
         async function handleCheck(validate = true) {
             const text = symptomInput.value.trim();
-            
+
             if (validate && text.length === 0) {
                 alert(isTamil ? dict.ta.emptyInputError : dict.en.emptyInputError);
                 symptomInput.focus();
@@ -647,32 +624,34 @@ Be specific and detailed. For example, if someone says headache + nausea + cold,
 
             // Show loading state
             adviceText.textContent = isTamil ? dict.ta.urgencyWait : dict.en.urgencyWait;
-            urgencyBadge.className = 'badge'; 
+            urgencyBadge.className = 'badge';
             urgencyBadge.innerHTML = '...';
             resultsSection.classList.remove('hidden');
             resultsSection.classList.remove('fade-in');
             void resultsSection.offsetWidth;
             resultsSection.classList.add('fade-in');
-            
+
             let result;
-            const apiKey = localStorage.getItem('gemini_api_key');
-            
+            const apiKey = "[PASTE YOUR KEY HERE]";
+
             try {
-                if (!apiKey) throw new Error('API key missing. Please reset key.');
-                
+                if (apiKey === "AIzaSyBqQ2MSLUm_k7PjBFv_qZWJO6rAQoqnjOs" || apiKey.trim() === "") {
+                    throw new Error('API key missing. Please insert a real API key directly into the script.');
+                }
+
                 const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
-                        system_instruction: { 
-                            parts: [{ text: SYSTEM_PROMPT }] 
+                        system_instruction: {
+                            parts: [{ text: SYSTEM_PROMPT }]
                         },
-                        contents: [{ 
-                            parts: [{ text: `User symptoms (${isTamil ? 'Please reply in Tamil' : 'Please reply in English'}): ${text}` }] 
+                        contents: [{
+                            parts: [{ text: `User symptoms (${isTamil ? 'Please reply in Tamil' : 'Please reply in English'}): ${text}` }]
                         }]
                     })
                 });
-                
+
                 if (response.ok) {
                     const data = await response.json();
                     const aiAdvice = data.candidates[0].content.parts[0].text;
@@ -682,20 +661,20 @@ Be specific and detailed. For example, if someone says headache + nausea + cold,
                     const data = await response.json();
                     throw new Error(data.error?.message || 'API Error: Verify your API key.');
                 }
-            } catch(e) {
+            } catch (e) {
                 console.error("Gemini API Error", e);
                 // On error, show error message
-                result = { 
-                    type: 'clinic', 
-                    level: 'Error Check Failed', 
-                    advice: `❌ ${e.message}\n\nPlease verify your API key by clicking "Change API Key" in the footer, or check your connection.` 
+                result = {
+                    type: 'clinic',
+                    level: 'Error Check Failed',
+                    advice: `❌ ${e.message}\n\nPlease check your web console for more details or verify your API key.`
                 };
             }
 
             // Apply exact classes
             urgencyBadge.className = 'badge'; // reset
             urgencyBadge.classList.add(result.type);
-            
+
             // Add icon based on type
             let icon = '';
             if (result.type === 'emergency') icon = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>';
@@ -707,12 +686,12 @@ Be specific and detailed. For example, if someone says headache + nausea + cold,
 
             // Show results section
             resultsSection.classList.remove('hidden');
-            
+
             // Trigger reflow to restart animation
             void resultsSection.offsetWidth;
-            
+
             resultsSection.classList.add('fade-in');
-            
+
             // Scroll to results smoothly
             if (validate) {
                 setTimeout(() => {
@@ -732,4 +711,5 @@ Be specific and detailed. For example, if someone says headache + nausea + cold,
         });
     </script>
 </body>
+
 </html>
