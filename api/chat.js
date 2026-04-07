@@ -13,7 +13,7 @@ const SYSTEM_PROMPT = `You are a medical assistant AI. When a user describes sym
 
 Be specific and detailed. For example, if someone says headache + nausea + cold, mention possibilities like viral fever, common cold, flu, or migraine. Never give vague generic responses.`;
 
-export default async function handler(req, res) {
+module.exports = async function handler(req, res) {
     if (req.method !== 'POST') {
         return res.status(405).json({ error: 'Method not allowed. Use POST.' });
     }
@@ -61,10 +61,11 @@ export default async function handler(req, res) {
 
         const adviceText = data.candidates[0].content.parts[0].text;
         
+        // Return structured as { advice: ... } so that index.html doesn't break
         return res.status(200).json({ advice: adviceText });
         
     } catch (error) {
         console.error("Vercel Function Error (Gemini API):", error);
         return res.status(500).json({ error: error.message || 'Internal Server Error' });
     }
-}
+};
